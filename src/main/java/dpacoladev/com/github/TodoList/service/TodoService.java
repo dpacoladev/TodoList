@@ -3,9 +3,11 @@ package dpacoladev.com.github.TodoList.service;
 import dpacoladev.com.github.TodoList.entity.Todo;
 import dpacoladev.com.github.TodoList.repository.TodoRepository;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TodoService {
     private final TodoRepository todoRepository;
 
