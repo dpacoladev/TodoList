@@ -2,6 +2,7 @@ package dpacoladev.com.github.TodoList.controller;
 
 import dpacoladev.com.github.TodoList.entity.Todo;
 import dpacoladev.com.github.TodoList.service.TodoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class TodoController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public List<Todo> create(@RequestBody Todo todo) {
         return todoService.create(todo);
     }
