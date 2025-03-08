@@ -2,6 +2,7 @@ package dpacoladev.com.github.TodoList.controller;
 
 import dpacoladev.com.github.TodoList.entity.Todo;
 import dpacoladev.com.github.TodoList.service.TodoService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class TodoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public List<Todo> create(@RequestBody Todo todo) {
+    public List<Todo> create(@RequestBody @Valid Todo todo) {
         return todoService.create(todo);
     }
 

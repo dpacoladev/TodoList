@@ -31,7 +31,16 @@ class TodoListApplicationTests {
 		;
 	}
 
+	@Test
 	void testCreateTodoFailure() {
+		Todo todo = new Todo("", "", false, 0);
 
+		webTestClient
+				.post()
+				.uri("/todos")
+				.bodyValue(todo)
+				.exchange()
+				.expectStatus().isBadRequest()
+		;
 	}
 }
